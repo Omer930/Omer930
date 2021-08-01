@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Arbutus+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Amaranth&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: stretch;
+}
+
+.header-title {
+  font-size: 28px;
+  padding: 20px;
+  font-family: 'Arbutus Slab', serif;
+  color: #6f6868;
+}
+
+.header-button-prop {
+  width: 180px;
+  height: 30px;
+  border-radius: 200px;
+  border: 1px;
+  background-color: orangered;
+  color: #fff;
+  font-family: 'Arbutus Slab', serif;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  -webkit-filter: drop-shadow(2px 4px 6px gray);
+}
+
+.header-button-prop:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.header-button-prop:focus {
+  outline: none;
+}
+
+.upload-btn {
+  background-color: #0cbdf5;
+  border-radius: 100px;
+  color: #fff;
+  width: 200px;
+  height: 40px;
+}
+
+.image-name-prop {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 250px;
+  padding: 8px;
+  color: green;
+}
+
+.table-props {
+  text-align: center;
+  filter: drop-shadow(2px 4px 6px black);
+  -webkit-filter: drop-shadow(2px 4px 6px black);
+}
+
+.table-dark tbody+tbody,
+.table-dark td,
+.table-dark th,
+.table-dark thead th {
+  border-color: #454d55 !important;
+}
+
+.table-button.prop {
+  width: 100px;
+  color: #fff;
+}
+
+
+.table td,
+.table th {
+  vertical-align: middle !important;
+}

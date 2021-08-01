@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai');
+
+.bg-light {
+  padding: 1em;
+  background-color: #172635 !important;
+}
+
+.navbar-brand {
+  margin-left: 20%;
+  color: #ffffff;
+}
+
+.fontProp{
+  font-family: 'Josefin Slab', serif;
+}
+
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover{
+    color: white!important;
+}
+
+.routerBackground {
+  background-color: #ffffff;
+  color: white;
+}
+
+.navbarMenu {
+  width: 100%;
+  text-align: center;
+
+}
+
+.navbarMenu>li {
+  float: none;
+  display: inline-block;
+}
+
+.nav-item {
+  padding: 15px;
+  padding-right: 30px;
+}
+
+.nav-item a {
+  color: #ffffff;
+}
+
+.userProp{
+    font-size: 18px;
+    font-family: 'Baloo Bhai', cursive;
+    color: white;
+}
+.userProp::hover{
+    text-decoration: none;
+}
+
+#horizontalLine {
+  border: 2px solid black;
+  width: 20em;
+  margin-top: 10%;
+}
+
+#routerProp {
+  padding-top: 2em;
+  background-color: #303942;
+  color: white;
+}
+
+
+#HomeProp::after {
+  content: "🏠"
+}
+
+#AuthorProp::after {
+  content: "👨‍🏭";
+}
+
+#BookProp::after {
+  content: "📚";
+}
+
+#ShopProp::after {
+  content: "🏘️";
+}
+
+#UserSign{
+    margin-right: 10px;
+ 
+}

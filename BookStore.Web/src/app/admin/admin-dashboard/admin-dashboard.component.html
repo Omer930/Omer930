@@ -1,0 +1,143 @@
+<div class="admin-dashboard-list">
+  <div routerLink="/shop" class="admin-dashboard-item">
+    <p class="item-left-prop">Recorded Shops</p>
+    <p class="item-right-prop">Total</p>
+    <hr class="mt-5" />
+    <p class="record-detail text-center">
+      {{dashboardData?.ShopCount}}
+    </p>
+  </div>
+  <div routerLink="/book" class="admin-dashboard-item">
+    <p class="item-left-prop">Recorded Books</p>
+    <p class="item-right-prop">Total</p>
+    <hr class="mt-5" />
+    <p class="record-detail text-center">
+      {{dashboardData?.BookCount}}
+    </p>
+  </div>
+  <div routerLink="/category" class="admin-dashboard-list">
+    <div class="admin-dashboard-item">
+      <p class="item-left-prop">Recorded Categories</p>
+      <p class="item-right-prop">Total</p>
+      <hr class="mt-5" />
+      <p class="record-detail text-center">
+        {{dashboardData?.CategoryCount}}
+      </p>
+    </div>
+  </div>
+  <div routerLink="/author" class="admin-dashboard-list">
+    <div class="admin-dashboard-item">
+      <p class="item-left-prop">Recorded Authors</p>
+      <p class="item-right-prop">Total</p>
+      <hr class="mt-5" />
+      <p class="record-detail text-center">
+        {{dashboardData?.AuthorCount}}
+      </p>
+    </div>
+  </div>
+  <div routerLink="/publisher" class="admin-dashboard-list">
+    <div class="admin-dashboard-item">
+      <p class="item-left-prop">Recorded Publishers</p>
+      <p class="item-right-prop">Total</p>
+      <hr class="mt-5" />
+      <p class="record-detail text-center">
+        {{dashboardData?.PublisherCount}}
+      </p>
+    </div>
+  </div>
+</div>
+<hr />
+<h2 class="text-center text-muted">Recorded Lists</h2>
+<div class="dasboard-recorded-list">
+  <table routerLink="/book" class="table table-dark table-props">
+    <caption class="text-center caption-props">
+      Recently Added Books
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Author</th>
+        <th scope="col">Avatar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of bookTableList; let i = index">
+        <td>{{book?.BookName}}</td>
+        <td>{{book?.AuthorId}}</td>
+        <td>{{book?.BookName}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table routerLink="/shop" class="table table-dark table-props">
+    <caption class="text-center">
+      Recently Added Shops
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Location</th>
+        <th scope="col">Record Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let shop of shopTableList; let i = index">
+        <td>{{shop?.Name}}</td>
+        <td>{{shop?.Location}}</td>
+        <td>{{shop?.CreatedDate | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table routerLink="/category" class="table table-dark table-props">
+    <caption class="text-center">
+      Recently Added Categories
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Record Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categoryTableList">
+        <td>{{category?.Name}}</td>
+        <td>{{category?.CreatedDate | date}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table routerLink="/author" class="table table-dark table-props">
+    <caption class="text-center">
+      Recently Added Authors
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Avatar</th>
+        <th scope="col">Books</th>
+        <th scope="col">Record Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let author of authorTableList">
+      </tr>
+    </tbody>
+  </table>
+  <table routerLink="/publisher" class="table table-dark table-props">
+    <caption class="text-center">
+      Recently Added Publishers
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Location</th>
+        <th scope="col">Record Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let publisher of publisherTableList">
+        <td>{{publisher?.Name}}</td>
+        <td>{{publisher?.Location}}</td>
+        <td>{{publisher?.CreatedDate | date}}</td>
+      </tr>
+    </tbody>
+  </table>

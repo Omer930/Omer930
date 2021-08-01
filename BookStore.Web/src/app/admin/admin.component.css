@@ -1,0 +1,76 @@
+.admin-props {
+  height: auto;
+  background: #C9D6FF;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E2E2E2, #C9D6FF);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.admin-navbar-prop {
+  overflow: auto;
+}
+
+.admin-navbar-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.admin-navbar-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 250px;
+  background-color: #263a49;
+  color: #fff;
+}
+
+.admin-navbar-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #2f404f;
+  height: stretch;
+}
+
+.admin-navbar-list-item {
+  color: #fff;
+  font-size: 18px;
+  width: stretch;
+  text-align: center;
+}
+
+.navbar-brand-prop {
+  width: 100px;
+  transform: scale(1.2);
+}
+
+.navbar-horizontal-line {
+  border-top: 1px solid gray;
+
+}
+
+.admin-navbar-settings {
+  position: absolute;
+  bottom: 10%;
+  height: 200px;
+  width: stretch;
+}
+
+#itemCategory {
+  padding-left: 30px;
+}
+
+#itemPublisher {
+  padding-left: 18px;
+}
+
+#itemSupplier {
+  padding-left: 10px;
+}

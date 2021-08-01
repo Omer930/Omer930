@@ -1,0 +1,113 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 parent-title-prop">
+      <h2>Supplier</h2>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-12">
+      <h5 *ngIf="!isEdit">Create Supplier</h5>
+      <h5 *ngIf="isEdit">Edit Supplier</h5>
+    </div>
+  </div>
+  <div class="mt-4">
+    <form id="supplierForm" name="form" method="POST" (ngSubmit)="f.form.valid && postSupplier()" #f="ngForm"
+      novalidate>
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="supplierName">Supplier Name</label>
+            <input type="text" class="form-control" id="supplierName" name="supplierName"
+              [(ngModel)]="supplier.SupplierName" #supplierName="ngModel" placeholder="Name" required>
+          </div>
+          <div *ngIf="supplierName.invalid && (f.dirty || supplierName.touched)" class="alert alert-danger">
+            <div *ngIf="supplierName.errors.required">
+              Supplier Name is required.
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label for="region">Region</label>
+            <input type="text" class="form-control" id="supplierRegion" name="supplierRegion"
+              [(ngModel)]="supplier.SupplierRegion" #region="ngModel" placeholder="Region" required>
+          </div>
+          <div *ngIf="region.invalid && (f.dirty || region.touched)" class="alert alert-danger">
+            <div *ngIf="region.errors.required">
+              Region is required.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col">
+          <button *ngIf="!isEdit" type="submit" class="btn btn-primary float-right"
+            [disabled]="f.form.pristine || f.form.invalid">Save</button>
+          <button *ngIf="isEdit" type="button" class="btn btn-primary float-right"
+            [disabled]="f.form.pristine || f.form.invalid" (click)="updateSupplier()">Save</button>
+          <button *ngIf="isEdit" type="button" class="btn btn-danger float-right mr-2"
+            (click)="cancelUpdate()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div [hidden]="!hasData">
+    <div class="row mb-4 mt-4">
+      <div class="col-12">
+        <h5>Supplier List</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <table class="container">
+          <thead>
+            <tr>
+              <th>
+                <h1>Supplier Name</h1>
+              </th>
+              <th>
+                <h1>Supplier Region</h1>
+              </th>
+              <th>
+                <h1>Actions</h1>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let supplier of allSuppliers">
+              <td>{{supplier.SupplierName}}</td>
+              <td>{{supplier.SupplierRegion}}</td>
+              <td><button class="btn btn-success ml-5" (click)="editSupplier(supplier)"><i
+                    class="fa fa-edit"></i></button>
+                <button class="btn btn-danger" (click)="onDelete(supplier.SupplierId)"><i
+                    class="fa fa-trash"></i></button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="deleteSupplier" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-triangle"
+            style="color:orange;"></i>&nbsp;Warning</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this supplier ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" (click)="deleteSupplier()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
